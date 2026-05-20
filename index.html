@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة أميرة 👑✨</title>
+    <title>عيد ميلاد نورهان 🎂🎉</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #f5af19 0%, #f12711 50%, #fd1d1d 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,255 +23,193 @@
             position: relative;
         }
 
-        .crown-float {
+        .balloon {
             position: absolute;
-            font-size: 25px;
-            opacity: 0.2;
-            animation: crownFloat 7s ease-in-out infinite;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: balloonFloat 8s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
-            filter: drop-shadow(0 0 10px gold);
         }
 
-        @keyframes crownFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.2; }
-            33% { transform: translateY(-30px) rotate(120deg) scale(1.3); opacity: 0.4; }
-            66% { transform: translateY(-15px) rotate(240deg) scale(0.9); opacity: 0.1; }
+        @keyframes balloonFloat {
+            0%, 100% { transform: translateY(100vh) rotate(0deg) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-20px) rotate(20deg) scale(1.2); opacity: 0.6; }
         }
 
-        .magic-sparkle {
+        .confetti-bg {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: gold;
-            border-radius: 50%;
-            animation: sparkle 3s ease-in-out infinite;
+            font-size: 20px;
+            opacity: 0.2;
+            animation: confettiBg 5s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes confettiBg {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .birthday-hat {
+            position: absolute;
+            font-size: 25px;
+            animation: hatBounce 3s ease-in-out infinite;
             pointer-events: none;
             z-index: 1;
-            box-shadow: 0 0 8px gold, 0 0 15px orange;
         }
 
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-
-        .scroll-reveal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #8B0000, #DC143C);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .scroll-reveal.hidden {
-            transform: translateY(-100%);
-        }
-
-        .scroll-emoji {
-            font-size: 70px;
-            animation: scrollBounce 1s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px gold);
-        }
-
-        @keyframes scrollBounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-15px) scale(1.1); }
-        }
-
-        .scroll-text {
-            color: gold;
-            font-size: 22px;
-            font-weight: 900;
-            margin-top: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .scroll-btn {
-            background: gold;
-            color: #8B0000;
-            border: none;
-            border-radius: 40px;
-            padding: 14px 40px;
-            font-size: 18px;
-            font-weight: 900;
-            font-family: 'Tajawal', sans-serif;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-            animation: btnPulse 1.5s ease-in-out infinite;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-        }
-
-        @keyframes btnPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        @keyframes hatBounce {
+            0%, 100% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
         }
 
         .card {
-            background: linear-gradient(135deg, rgba(255, 248, 220, 0.95), rgba(255, 235, 205, 0.95));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.95));
             backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 20px 18px;
+            border-radius: 30px;
+            padding: 25px 20px;
             width: 340px;
             max-width: 92vw;
             text-align: center;
             box-shadow: 
-                0 15px 50px rgba(245, 175, 25, 0.3),
-                0 0 0 2px solid rgba(255, 215, 0, 0.4),
-                inset 0 0 30px rgba(255, 215, 0, 0.1);
+                0 20px 60px rgba(102, 126, 234, 0.3),
+                0 0 0 2px solid rgba(255, 105, 180, 0.3),
+                inset 0 0 40px rgba(255, 182, 193, 0.2);
             position: relative;
             z-index: 10;
             animation: cardAppear 1s ease-out;
-            border: 2px solid gold;
+            border: 2px solid rgba(255, 105, 180, 0.3);
         }
 
         @keyframes cardAppear {
-            from { opacity: 0; transform: scale(0.7) translateY(40px); }
+            from { opacity: 0; transform: scale(0.7) translateY(50px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .crown-top {
+        .cake-top {
             position: absolute;
-            top: -20px;
+            top: -25px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 40px;
-            animation: crownGlow 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px gold);
+            font-size: 50px;
+            animation: cakeGlow 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
             z-index: 20;
         }
 
-        @keyframes crownGlow {
-            0%, 100% { transform: translateX(-50%) scale(1) rotate(-5deg); filter: drop-shadow(0 0 15px gold); }
-            50% { transform: translateX(-50%) scale(1.15) rotate(5deg); filter: drop-shadow(0 0 25px orange); }
+        @keyframes cakeGlow {
+            0%, 100% { transform: translateX(-50%) scale(1) rotate(-5deg); filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.5)); }
+            50% { transform: translateX(-50%) scale(1.15) rotate(5deg); filter: drop-shadow(0 0 30px rgba(255, 20, 147, 0.7)); }
         }
 
         .badge {
             display: inline-block;
-            background: linear-gradient(135deg, #f5af19, #f12711);
-            border: 1px solid gold;
-            border-radius: 20px;
-            padding: 6px 16px;
-            font-size: 11px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 12px;
             color: white;
             font-weight: 900;
+            margin-bottom: 15px;
+            margin-top: 20px;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4);
+            animation: birthdayGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes birthdayGlow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4); transform: scale(1); }
+            50% { box-shadow: 0 4px 35px rgba(196, 69, 105, 0.6); transform: scale(1.05); }
+        }
+
+        .birthday-emoji {
+            font-size: 55px;
             margin-bottom: 10px;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(245, 175, 25, 0.4);
-            animation: royalGlow 2s ease-in-out infinite;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-            letter-spacing: 1px;
-        }
-
-        @keyframes royalGlow {
-            0%, 100% { box-shadow: 0 4px 15px rgba(245, 175, 25, 0.4); transform: scale(1); }
-            50% { box-shadow: 0 4px 25px rgba(241, 39, 17, 0.6); transform: scale(1.03); }
-        }
-
-        .princess-emoji {
-            font-size: 50px;
-            margin-bottom: 8px;
-            animation: princessDance 2s ease-in-out infinite;
+            animation: birthdayDance 2s ease-in-out infinite;
             display: inline-block;
-            filter: drop-shadow(0 0 15px gold);
+            filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.4));
         }
 
-        @keyframes princessDance {
-            0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
-            25% { transform: translateY(-8px) rotate(5deg) scale(1.1); }
-            50% { transform: translateY(0) rotate(-3deg) scale(1); }
-            75% { transform: translateY(-5px) rotate(3deg) scale(1.05); }
+        @keyframes birthdayDance {
+            0%, 100% { transform: translateY(0) rotate(-8deg) scale(1); }
+            25% { transform: translateY(-12px) rotate(8deg) scale(1.15); }
+            50% { transform: translateY(0) rotate(-4deg) scale(1); }
+            75% { transform: translateY(-6px) rotate(4deg) scale(1.1); }
         }
 
         .title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
             color: #2d2d2d;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.5;
         }
 
         .title .highlight {
-            background: linear-gradient(135deg, #f5af19, #f12711);
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 22px;
+            font-size: 26px;
             display: block;
-            margin-top: 4px;
+            margin-top: 5px;
         }
 
-        .royal-decree {
-            background: linear-gradient(135deg, rgba(245, 175, 25, 0.08), rgba(241, 39, 17, 0.08));
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 15px;
-            padding: 12px;
-            margin-bottom: 15px;
+        .late-notice {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+            border: 2px dashed rgba(255, 107, 157, 0.4);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
             position: relative;
         }
 
-        .royal-decree::before {
-            content: "📜";
+        .late-notice::before {
+            content: "😅";
             position: absolute;
-            top: -12px;
-            right: 15px;
-            font-size: 20px;
-            background: linear-gradient(135deg, #FFF8DC, #FFEBCD);
-            padding: 0 6px;
+            top: -15px;
+            right: 20px;
+            font-size: 24px;
+            background: white;
+            padding: 0 8px;
             border-radius: 50%;
         }
 
-        .decree-text {
-            font-size: 12px;
-            color: #444;
+        .notice-text {
+            font-size: 14px;
+            color: #555;
             line-height: 1.8;
             font-weight: 700;
         }
 
-        .decree-text .king {
-            color: #f12711;
+        .notice-text .excuse {
+            color: #ff6b9d;
             font-weight: 900;
-            font-size: 13px;
-        }
-
-        .decree-text .princess {
-            color: #f5af19;
-            font-weight: 900;
-            font-size: 13px;
+            font-size: 15px;
         }
 
         .buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
-            margin-top: 15px;
+            margin-top: 20px;
             position: relative;
-            height: 55px;
-            background: linear-gradient(135deg, rgba(245, 175, 25, 0.06), rgba(241, 39, 17, 0.06));
-            border-radius: 18px;
-            padding: 10px;
-            border: 1px dashed rgba(255, 215, 0, 0.3);
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.06), rgba(196, 69, 105, 0.06));
+            border-radius: 20px;
+            padding: 12px;
+            border: 2px dashed rgba(255, 107, 157, 0.3);
         }
 
         .btn {
             border: none;
-            border-radius: 18px;
-            padding: 12px 24px;
-            font-size: 14px;
+            border-radius: 20px;
+            padding: 14px 28px;
+            font-size: 15px;
             font-weight: 900;
             font-family: 'Tajawal', sans-serif;
             cursor: pointer;
@@ -280,46 +218,46 @@
         }
 
         .btn-yes {
-            background: linear-gradient(135deg, #f5af19, #f12711);
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
             color: white;
-            box-shadow: 0 5px 20px rgba(245, 175, 25, 0.4);
-            min-width: 130px;
-            font-size: 16px;
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 6px 25px rgba(255, 107, 157, 0.4);
+            min-width: 150px;
+            font-size: 17px;
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .btn-yes:hover {
-            transform: translateY(-3px) scale(1.08);
-            box-shadow: 0 10px 30px rgba(245, 175, 25, 0.5);
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 12px 40px rgba(255, 107, 157, 0.5);
         }
 
         .btn-no {
             background: linear-gradient(135deg, #e8e8e8, #d5d5d5);
             color: #888;
-            min-width: 70px;
+            min-width: 80px;
             position: absolute;
-            left: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            left: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
             transition: all 0.2s ease-out;
-            font-size: 13px;
-            border: 1px solid rgba(0,0,0,0.05);
+            font-size: 14px;
+            border: 2px solid rgba(0,0,0,0.05);
         }
 
         .prank-card {
-            background: linear-gradient(135deg, rgba(30, 10, 10, 0.97), rgba(20, 5, 5, 0.95));
+            background: linear-gradient(135deg, rgba(40, 10, 30, 0.97), rgba(30, 5, 20, 0.95));
             backdrop-filter: blur(20px);
-            border-radius: 22px;
-            padding: 25px 20px;
+            border-radius: 25px;
+            padding: 30px 25px;
             width: 320px;
             max-width: 90vw;
             text-align: center;
             box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.7),
-                0 0 0 2px solid rgba(255, 215, 0, 0.3);
+                0 25px 70px rgba(0, 0, 0, 0.7),
+                0 0 0 2px solid rgba(255, 107, 157, 0.3);
             position: relative;
             z-index: 10;
             animation: prankAppear 0.6s ease-out;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(255, 107, 157, 0.2);
         }
 
         @keyframes prankAppear {
@@ -329,13 +267,13 @@
 
         .prank-icon {
             font-size: 70px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: block;
-            animation: royalShake 0.7s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+            animation: prankShake 0.6s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.4));
         }
 
-        @keyframes royalShake {
+        @keyframes prankShake {
             0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
             15% { transform: translateX(-8px) rotate(-8deg) scale(1.1); }
             30% { transform: translateX(8px) rotate(8deg) scale(0.95); }
@@ -345,37 +283,37 @@
         }
 
         .prank-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 900;
-            color: #ffd700;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            color: #ff6b9d;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
 
         .prank-text {
-            font-size: 14px;
+            font-size: 15px;
             color: rgba(255,255,255,0.92);
-            line-height: 1.8;
-            margin-bottom: 12px;
+            line-height: 1.9;
+            margin-bottom: 15px;
         }
 
         .prank-footer {
-            font-size: 12px;
-            color: rgba(255,215,0,0.6);
+            font-size: 13px;
+            color: rgba(255,107,157,0.6);
             font-style: italic;
             font-weight: 700;
         }
 
         .success-card {
-            background: linear-gradient(135deg, rgba(255, 248, 220, 0.97), rgba(255, 235, 205, 0.97));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(255, 240, 245, 0.97));
             backdrop-filter: blur(20px);
-            border-radius: 25px;
+            border-radius: 30px;
             width: 340px;
             max-width: 94vw;
             overflow: hidden;
             box-shadow: 
-                0 20px 60px rgba(245, 175, 25, 0.3),
-                0 0 0 2px solid rgba(255, 215, 0, 0.4);
+                0 25px 70px rgba(255, 107, 157, 0.3),
+                0 0 0 2px solid rgba(255, 107, 157, 0.3);
             position: relative;
             z-index: 10;
             animation: successAppear 1s ease-out;
@@ -387,36 +325,36 @@
         }
 
         .success-header {
-            background: linear-gradient(135deg, #f5af19, #f12711);
-            padding: 20px 15px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            padding: 25px 20px;
             text-align: center;
             position: relative;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
-            padding-bottom: 40px;
+            padding-bottom: 45px;
         }
 
         .success-header h2 {
             color: white;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 900;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .success-header p {
             color: rgba(255,255,255,0.9);
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .success-body {
-            padding: 15px 18px 20px;
+            padding: 20px 22px 25px;
         }
 
         .detail-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dashed rgba(245, 175, 25, 0.2);
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 107, 157, 0.2);
         }
 
         .detail-row:last-child {
@@ -426,36 +364,36 @@
         .detail-label {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 10px;
+            font-size: 14px;
             color: #444;
             font-weight: 800;
         }
 
         .detail-value {
-            font-size: 12px;
-            color: #f12711;
+            font-size: 13px;
+            color: #ff6b9d;
             font-weight: 900;
         }
 
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .countdown-box {
-            background: linear-gradient(135deg, #f5af19, #f12711);
-            border-radius: 12px;
-            padding: 10px 8px;
-            min-width: 55px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            border-radius: 15px;
+            padding: 12px 10px;
+            min-width: 60px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(245, 175, 25, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
         }
 
         .countdown-box .num {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 900;
             color: white;
             display: block;
@@ -463,25 +401,25 @@
         }
 
         .countdown-box .label {
-            font-size: 9px;
+            font-size: 10px;
             color: rgba(255,255,255,0.9);
-            margin-top: 4px;
+            margin-top: 5px;
             display: block;
             font-weight: 800;
         }
 
         .countdown-sep {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
-            color: #f5af19;
+            color: #ff6b9d;
             align-self: center;
         }
 
         .countdown-title {
             text-align: center;
-            font-size: 11px;
+            font-size: 13px;
             color: #777;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: 800;
         }
 
@@ -498,7 +436,7 @@
 
         .confetti-piece {
             position: absolute;
-            font-size: 18px;
+            font-size: 20px;
             animation: confettiFall linear forwards;
         }
 
@@ -524,18 +462,18 @@
         }
 
         .dark-overlay {
-            background: linear-gradient(135deg, #1a0505, #0f0202);
+            background: linear-gradient(135deg, #1a0a1a, #0f050f);
         }
 
         .light-overlay {
-            background: linear-gradient(135deg, #f5af19 0%, #f12711 50%, #fd1d1d 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         }
 
         .dots {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             justify-content: center;
-            margin-top: 12px;
+            margin-top: 15px;
         }
         .dot {
             width: 8px;
@@ -545,55 +483,65 @@
             transition: all 0.3s ease;
         }
         .dot.active {
-            background: linear-gradient(135deg, #f5af19, #f12711);
-            width: 20px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            width: 22px;
             border-radius: 4px;
         }
 
-        .royal-note {
-            margin-top: 12px;
-            font-size: 10px;
+        .birthday-note {
+            margin-top: 15px;
+            font-size: 11px;
             color: #888;
             font-style: italic;
-            border-top: 1px dashed rgba(255, 215, 0, 0.3);
-            padding-top: 8px;
+            border-top: 1px dashed rgba(255, 107, 157, 0.3);
+            padding-top: 10px;
             font-weight: 700;
+        }
+
+        .age-display {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #ff6b9d;
+            font-weight: 900;
         }
     </style>
 </head>
 <body>
 
-    <!-- Scroll Reveal -->
-    <div class="scroll-reveal" id="scroll-reveal">
-        <div class="scroll-emoji">📜👑</div>
-        <div class="scroll-text">مرسوم ملكي من القصر</div>
-        <button class="scroll-btn" onclick="openDecree()">افتح المرسوم 📜</button>
-    </div>
-
-    <div id="crown-lights"></div>
-    <div id="sparkles"></div>
+    <div id="balloons"></div>
+    <div id="confetti-bg"></div>
+    <div id="hats"></div>
 
     <!-- MAIN SCREEN -->
-    <div class="screen" id="screen-main">
+    <div class="screen active light-overlay" id="screen-main">
         <div class="card">
-            <div class="crown-top">👑</div>
-            <div class="badge">👑 مرسوم ملكي 👑</div>
-            <div class="princess-emoji">👸✨</div>
+            <div class="cake-top">🎂</div>
+            <div class="badge">🎉 عيد ميلاد سعيد 🎉</div>
+            <div class="birthday-emoji">🎈🎁</div>
             <h1 class="title">
-                يا أميرة<br>
-                <span class="highlight">نروح ناكل بيتزا ونلعب بلايستيشن؟</span> 🎮
+                يا نورهان<br>
+                <span class="highlight">عيد ميلادك كان من يومين!</span> 😅
             </h1>
 
-            <div class="royal-decree">
-                <div class="decree-text">
-                    <span class="king">👑 الملك:</span> "بأمر ملكي.. أدعوكِ لقضاء وقت ممتع"<br>
-                    <span class="princess">👸 الأميرة:</span> "ومش لاقي حد غيركِ يستحق الشرف"<br>
-                    <span style="color:#f5af19; font-weight:900; font-size:11px;">(ده معنى إنكِ مميزة يا صاحبة السمو 😎)</span>
+            <div class="age-display">
+                🎂 +1 سنة حلوة! (متأخرين شوية بس مش مهم 😂)
+            </div>
+
+            <div class="late-notice">
+                <div class="notice-text">
+                    <span class="excuse">😅 الأعذار:</span><br>
+                    "النت كان مقطوع"<br>
+                    "الكلب أكل الدعوة"<br>
+                    "كنت نايم"<br>
+                    <span style="color:#ff6b9d; font-weight:900; font-size:12px;">(المهم إننا بنحتفل دلوقتي! 🎉)</span>
                 </div>
             </div>
 
             <div class="buttons" id="btn-container">
-                <button class="btn btn-yes" onclick="handleYes()">🍕 أوامرك يا سمو!</button>
+                <button class="btn btn-yes" onclick="handleYes()">🎂 نحتفل دلوقتي!</button>
                 <button class="btn btn-no" id="btn-no" onmouseenter="moveNoButton()" onclick="handleNo()">🙄 لا</button>
             </div>
             <div class="dots">
@@ -603,8 +551,8 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
-            <div class="royal-note">
-                📜 ملاحظة القصر: زر "لا" مش موجود في الدستور الملكي 😂
+            <div class="birthday-note">
+                🎂 ملاحظة: زر "لا" مش موجود في قائمة عيد الميلاد 😂
             </div>
         </div>
     </div>
@@ -613,13 +561,13 @@
     <div class="screen dark-overlay" id="screen-prank1">
         <div class="prank-card">
             <span class="prank-icon">😱</span>
-            <h3 class="prank-title"> فضيحة ملكية! الأميرة رفضت زياد!</h3>
+            <h3 class="prank-title">كارثة! نورهان رفضت الاحتفال!</h3>
             <p class="prank-text">
-                👑 الكلام ده مش في البروتوكول!<br>
-                لازم نعمل تحقيق قصر فوراً<br>
-                🕵️‍♂️ هل الأميرة فقدت عقلها؟
+                🎂 الكلام ده مش في برنامج العيد!<br>
+                لازم نعمل لجنة تحقيق فوراً<br>
+                🕵️‍♂️ هل نورهان زعلت من التأخير؟
             </p>
-            <p class="prank-footer">📜 إعادة صياغة المرسوم يا فندم</p>
+            <p class="prank-footer">🎉 إعادة الاحتفال من الأول يا فندم</p>
         </div>
     </div>
 
@@ -627,13 +575,13 @@
     <div class="screen dark-overlay" id="screen-prank2">
         <div class="prank-card">
             <span class="prank-icon">🤡</span>
-            <h3 class="prank-title">أميره.. إنتي بتقوليلي لا ي جزمه ؟</h3>
+            <h3 class="prank-title">نورهان.. إنتي بتضحكي عليا؟</h3>
             <p class="prank-text">
-                🤡 أنا شكلي دلوقتي كلاون<br>
-                واقف في القصر مستني ردك<br>
-                💀 والحرس بيضحك عليا
+                🤡 أنا شكلي دلوقتي clown<br>
+                واقف بالهدايا مستني ردك<br>
+                💀 والبالونات بتنفجر
             </p>
-            <p class="prank-footer">😤  راجعي نفسك يا صاحبة السمو الاميره</p>
+            <p class="prank-footer">😤 راجعي نفسك يا نجمة العيد</p>
         </div>
     </div>
 
@@ -641,13 +589,13 @@
     <div class="screen dark-overlay" id="screen-prank3">
         <div class="prank-card">
             <span class="prank-icon">🥺</span>
-            <h3 class="prank-title">القصر بيتقفل..</h3>
+            <h3 class="prank-title">خلاص.. هاكل التورتة لوحدي</h3>
             <p class="prank-text">
-                🏰 الملك هيسافر لوحده<br>
-                🍕 هاكل البيتزا في القصر لوحدي<br>
-                😭 والخدم بيبكوا
+                🎂 هاكل 10 قطع تورتة لوحدي<br>
+                🎁 وهفتح الهدايا لوحدي<br>
+                😭 وهبكي على الكيكة لوحدي
             </p>
-            <p class="prank-footer">💔 النهاية الحزينة للحكاية</p>
+            <p class="prank-footer">💔 النهاية الحزينة للعيد</p>
         </div>
     </div>
 
@@ -655,11 +603,11 @@
     <div class="screen dark-overlay" id="screen-prank4">
         <div class="prank-card">
             <span class="prank-icon">👻</span>
-            <h3 class="prank-title">الأميرة اختفت من القصر!</h3>
+            <h3 class="prank-title">نورهان اختفت من الحفلة!</h3>
             <p class="prank-text">
                 👻 آخر مرة شفتها كانت بتقول "لا"<br>
-                🚨 واختفت من القصر بالكامل<br>
-                🔍 لو حد شافها يبلغ الحرس الملكي
+                🚨 واختفت من الحفلة بالكامل<br>
+                🔍 لو حد شافها يبلغ صاحب العيد
             </p>
             <p class="prank-footer">😂 أنا بتهزأ بجد دلوقتي</p>
         </div>
@@ -669,44 +617,44 @@
     <div class="screen light-overlay" id="screen-success">
         <div class="success-card">
             <div class="success-header">
-                <div style="font-size: 45px; margin-bottom: 10px; animation: princessDance 1s infinite;">🎉🍕🎮</div>
-                <h2>الأميرة وافقت! 👑🎊</h2>
-                <p>الحمدلله.. القصر هيفضل مفتوح</p>
+                <div style="font-size: 50px; margin-bottom: 12px; animation: birthdayDance 1s infinite;">🎉🎂🎁</div>
+                <h2>نورهان وافقت! 🎊</h2>
+                <p>الحمدلله.. العيد هيكمل</p>
             </div>
             <div class="success-body">
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>📍</span>
-                        <span>قصر البيتزا</span>
+                        <span>مكان الاحتفال</span>
                     </div>
-                    <div class="detail-value">أي حتة فيها بيتزا 🍕</div>
+                    <div class="detail-value">أي حتة فيها تورتة 🎂</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
-                        <span>🎮</span>
-                        <span>النشاط الملكي</span>
+                        <span>🎁</span>
+                        <span>الهدايا</span>
                     </div>
-                    <div class="detail-value">بلايستيشن + بيتزا</div>
+                    <div class="detail-value">مفاجأة (متأخرة بس حلوة 😂)</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>💰</span>
-                        <span>الخزينة الملكية</span>
+                        <span>الميزانية</span>
                     </div>
-                    <div class="detail-value">على زياد 💜 😎</div>
+                    <div class="detail-value">على صاحب الدعوة 😎</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>⏰</span>
-                        <span>وقت الملوك</span>
+                        <span>وقت الاحتفال</span>
                     </div>
-                    <div class="detail-value">لما الأميرة تكون فاضية 😂</div>
+                    <div class="detail-value">لما نورهان تكون فاضية 😂</div>
                 </div>
 
-                <div class="countdown-title">⏳ متبقي على العيد الملكي</div>
+                <div class="countdown-title">⏳ متبقي على الاحتفال المتأخر</div>
                 <div class="countdown">
                     <div class="countdown-box">
-                        <span class="num" id="cd-days">01</span>
+                        <span class="num" id="cd-days">00</span>
                         <span class="label">يوم</span>
                     </div>
                     <div class="countdown-sep">:</div>
@@ -726,8 +674,8 @@
                     </div>
                 </div>
 
-                <p style="text-align:center; margin-top:15px; color:#f12711; font-weight:900; font-size:14px;">
-                    🍕🎮 مستني اللحظة دي من زمان! 👑
+                <p style="text-align:center; margin-top:20px; color:#ff6b9d; font-weight:900; font-size:16px;">
+                    🎂🎉 كل سنة وإنتي طيبة يا نورهان! 🎈
                 </p>
             </div>
         </div>
@@ -736,39 +684,46 @@
     <div class="confetti" id="confetti"></div>
 
     <script>
-        // ===== OPEN DECREE =====
-        function openDecree() {
-            document.getElementById('scroll-reveal').classList.add('hidden');
-            setTimeout(() => {
-                document.getElementById('screen-main').classList.add('active');
-            }, 500);
-        }
-
-        // ===== CROWN LIGHTS =====
-        const lightsContainer = document.getElementById('crown-lights');
-        const crownEmojis = ['👑', '✨', '💎', '🏰', '⚜️', '🌟', '💫', '🔱'];
+        // ===== BALLOONS =====
+        const balloonsContainer = document.getElementById('balloons');
+        const balloonEmojis = ['🎈', '🎉', '🎊', '🎁', '🎂', '🎀', '🎵', '🎶', '🎸', '🎹'];
         for (let i = 0; i < 20; i++) {
-            const l = document.createElement('div');
-            l.className = 'crown-float';
-            l.textContent = crownEmojis[Math.floor(Math.random() * crownEmojis.length)];
-            l.style.left = Math.random() * 100 + '%';
-            l.style.top = Math.random() * 100 + '%';
-            l.style.animationDelay = Math.random() * 7 + 's';
-            l.style.animationDuration = (5 + Math.random() * 7) + 's';
-            l.style.fontSize = (18 + Math.random() * 30) + 'px';
-            lightsContainer.appendChild(l);
+            const b = document.createElement('div');
+            b.className = 'balloon';
+            b.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            b.style.left = Math.random() * 100 + '%';
+            b.style.animationDelay = Math.random() * 8 + 's';
+            b.style.animationDuration = (6 + Math.random() * 8) + 's';
+            b.style.fontSize = (20 + Math.random() * 35) + 'px';
+            balloonsContainer.appendChild(b);
         }
 
-        // ===== SPARKLES =====
-        const sparklesContainer = document.getElementById('sparkles');
+        // ===== CONFETTI BG =====
+        const confettiBgContainer = document.getElementById('confetti-bg');
+        const confettiEmojis = ['✨', '🌟', '💫', '⭐', '🎊', '🎉', '🎀', '💖', '💝', '💕'];
         for (let i = 0; i < 30; i++) {
-            const s = document.createElement('div');
-            s.className = 'magic-sparkle';
-            s.style.left = Math.random() * 100 + '%';
-            s.style.top = Math.random() * 100 + '%';
-            s.style.animationDelay = Math.random() * 3 + 's';
-            s.style.animationDuration = (2 + Math.random() * 3) + 's';
-            sparklesContainer.appendChild(s);
+            const c = document.createElement('div');
+            c.className = 'confetti-bg';
+            c.textContent = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+            c.style.left = Math.random() * 100 + '%';
+            c.style.animationDelay = Math.random() * 5 + 's';
+            c.style.animationDuration = (3 + Math.random() * 4) + 's';
+            c.style.fontSize = (15 + Math.random() * 25) + 'px';
+            confettiBgContainer.appendChild(c);
+        }
+
+        // ===== HATS =====
+        const hatsContainer = document.getElementById('hats');
+        for (let i = 0; i < 10; i++) {
+            const h = document.createElement('div');
+            h.className = 'birthday-hat';
+            h.textContent = '🎉';
+            h.style.left = Math.random() * 100 + '%';
+            h.style.top = Math.random() * 100 + '%';
+            h.style.animationDelay = Math.random() * 3 + 's';
+            h.style.animationDuration = (2 + Math.random() * 3) + 's';
+            h.style.fontSize = (20 + Math.random() * 20) + 'px';
+            hatsContainer.appendChild(h);
         }
 
         // ===== SCREENS LOGIC =====
@@ -815,7 +770,7 @@
                 showScreen('screen-main');
                 isPranking = false;
                 const btn = document.getElementById('btn-no');
-                btn.style.left = '15px';
+                btn.style.left = '20px';
                 btn.style.top = '0px';
                 btn.style.transform = 'rotate(0deg) scale(1)';
             }, 6000);
@@ -830,14 +785,14 @@
         // ===== CONFETTI =====
         function startConfetti() {
             const container = document.getElementById('confetti');
-            const shapes = ['🍕', '🎮', '🎉', '🔥', '💖', '✨', '👑', '🥳', '🤪', '💀', '💎', '🏰', '⚜️', '🔱'];
+            const shapes = ['🎂', '🎉', '🎁', '🎈', '🎊', '🎀', '💖', '✨', '🌟', '💫', '🍰', '🧁', '🎵', '🎶'];
 
-            for (let i = 0; i < 60; i++) {
+            for (let i = 0; i < 80; i++) {
                 const piece = document.createElement('div');
                 piece.className = 'confetti-piece';
                 piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
                 piece.style.left = Math.random() * 100 + '%';
-                piece.style.fontSize = (16 + Math.random() * 25) + 'px';
+                piece.style.fontSize = (18 + Math.random() * 30) + 'px';
                 piece.style.animationDuration = (2.5 + Math.random() * 5) + 's';
                 piece.style.animationDelay = Math.random() * 3 + 's';
                 container.appendChild(piece);
@@ -851,8 +806,7 @@
         // ===== COUNTDOWN =====
         function startCountdown() {
             const targetDate = new Date();
-            targetDate.setDate(targetDate.getDate() + 1);
-            targetDate.setHours(20, 0, 0, 0);
+            targetDate.setHours(targetDate.getHours() + 2);
 
             function updateCountdown() {
                 const now = new Date();
