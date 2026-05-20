@@ -1,1 +1,711 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة موعد 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 50%, #ffe4e1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .particle {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-30px) rotate(10deg); opacity: 0.3; }
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 40px 35px;
+            width: 380px;
+            max-width: 90vw;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 107, 107, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+            animation: cardAppear 0.8s ease-out;
+        }
+        @keyframes cardAppear {
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fff8f0, #ffe4d6);
+            border: 1px solid rgba(255, 150, 100, 0.3);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 13px;
+            color: #c75b39;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(255, 150, 100, 0.1);
+        }
+        .rose {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: roseBounce 2s ease-in-out infinite;
+            display: inline-block;
+        }
+        @keyframes roseBounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        .title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #2d2d2d;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .title .highlight { color: #c75b39; }
+        .subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .subtitle .emoji { font-size: 18px; }
+        .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+            height: 55px;
+        }
+        .btn {
+            border: none;
+            border-radius: 16px;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Tajawal', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .btn-yes {
+            background: linear-gradient(135deg, #e07a5f, #c75b39);
+            color: white;
+            box-shadow: 0 4px 20px rgba(199, 91, 57, 0.3);
+            min-width: 140px;
+        }
+        .btn-yes:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(199, 91, 57, 0.4);
+        }
+        .btn-no {
+            background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+            color: #888;
+            min-width: 80px;
+            position: absolute;
+            left: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.15s ease-out;
+        }
+        .prank-card {
+            background: linear-gradient(135deg, rgba(180, 80, 80, 0.95), rgba(120, 50, 70, 0.9));
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 35px 30px;
+            width: 340px;
+            max-width: 85vw;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(100, 40, 60, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+            animation: prankAppear 0.5s ease-out;
+        }
+        @keyframes prankAppear {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .prank-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+        .prank-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .prank-text {
+            font-size: 15px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .prank-footer {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+        }
+        .success-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            width: 400px;
+            max-width: 92vw;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(255, 107, 107, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+            animation: successAppear 0.8s ease-out;
+        }
+        @keyframes successAppear {
+            from { opacity: 0; transform: scale(0.8) translateY(40px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .success-header {
+            background: linear-gradient(135deg, #e07a5f, #c75b39);
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            padding-bottom: 50px;
+        }
+        .success-header h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .success-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+        }
+        .success-body { padding: 25px 30px 30px; }
+        .detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #444;
+            font-weight: 600;
+        }
+        .detail-value {
+            font-size: 14px;
+            color: #c75b39;
+            font-weight: 700;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .countdown-box {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            border-radius: 12px;
+            padding: 15px 12px;
+            min-width: 70px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .countdown-box .num {
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            display: block;
+            line-height: 1;
+        }
+        .countdown-box .label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+            display: block;
+        }
+        .countdown-sep {
+            font-size: 24px;
+            font-weight: 900;
+            color: #c75b39;
+            align-self: center;
+        }
+        .countdown-title {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-top: 15px;
+        }
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
+            font-size: 16px;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        .screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+        .screen.active { display: flex; }
+        .dark-overlay { background: linear-gradient(135deg, #2a1a2e, #1a1a2e); }
+        .light-overlay { background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 50%, #ffe4e1 100%); }
+        .dots {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+        .dot.active {
+            background: #c75b39;
+            width: 18px;
+            border-radius: 3px;
+        }
+        .cat-emoji {
+            font-size: 80px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .youtube-player {
+            position: fixed;
+            bottom: -200px;
+            right: -200px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .music-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 200;
+            font-size: 13px;
+            color: #c75b39;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .music-bar:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .music-bar .music-icon {
+            font-size: 18px;
+            animation: musicPulse 1s ease-in-out infinite;
+        }
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .music-bar .music-status {
+            font-size: 11px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="youtube-player" id="youtube-container">
+        <iframe 
+            id="youtube-iframe"
+            width="1" 
+            height="1" 
+            src="https://www.youtube.com/embed/RejKByB-sk8?autoplay=1&loop=1&playlist=RejKByB-sk8&enablejsapi=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="music-bar" onclick="toggleMusic()">
+        <span class="music-icon" id="music-icon">🎵</span>
+        <span>شغل الأغنية</span>
+        <span class="music-status" id="music-status">▶️ اضغط هنا</span>
+    </div>
+
+    <div id="particles"></div>
+
+    <div class="screen active light-overlay" id="screen-main">
+        <div class="card">
+            <div class="badge">✨ لحظة مهمة ✨</div>
+            <div class="rose">☕</div>
+            <h1 class="title">
+                يا خلود<br>
+                <span class="highlight">تيجي نشرب قهوة في date؟</span> ☕
+            </h1>
+            <p class="subtitle">
+                <span class="emoji">🥺</span> بقالي شوية بفكر أقولك...<br>
+                بس مكنتش عارف أقولها إزاي
+            </p>
+            <div class="buttons" id="btn-container">
+                <button class="btn btn-yes" onclick="handleYes()">✨ موافقة</button>
+                <button class="btn btn-no" id="btn-no" onmouseenter="moveNoButton()" onclick="handleNo()">لا</button>
+            </div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen dark-overlay" id="screen-prank1">
+        <div class="prank-card">
+            <span class="cat-emoji">🥹</span>
+            <h3 class="prank-title">لو قولتي لا</h3>
+            <p class="prank-text">
+                هزعل بجد ومش هكلمك تاني<br>
+                🥹 بجد بجد والله
+            </p>
+            <p class="prank-footer">فكري كويس يا خلود 😤</p>
+        </div>
+    </div>
+
+    <div class="screen dark-overlay" id="screen-prank2">
+        <div class="prank-card">
+            <span class="cat-emoji">😾</span>
+            <h3 class="prank-title">أنا زعلت منك!</h3>
+            <p class="prank-text">
+                انتي بتتهيي بقلبي ليه؟!<br>
+                💔 قلبي بيعيط دلوقتي
+            </p>
+            <p class="prank-footer">رجعيني تاني 😿</p>
+        </div>
+    </div>
+
+    <div class="screen dark-overlay" id="screen-prank3">
+        <div class="prank-card">
+            <span class="cat-emoji">😿</span>
+            <h3 class="prank-title">خلاص.. راحت عليكِ!</h3>
+            <p class="prank-text">
+                عزومة وشمع وكل حاجة<br>
+                🕯️ بس انتي اختارتي تعذبي قلبي
+            </p>
+            <p class="prank-footer">💔 قلبي انكسر فعلاً</p>
+        </div>
+    </div>
+
+    <div class="screen dark-overlay" id="screen-prank4">
+        <div class="prank-card">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=400&fit=crop" 
+                 class="prank-img" 
+                 alt="cat with rose"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="cat-emoji" style="display:none;">🐱🌹</span>
+            <h3 class="prank-title">أنا شايل الورد دا من بدري</h3>
+            <p class="prank-text">
+                🌹 وانتي بترفضيني<br>
+                💔🥹
+            </p>
+            <p class="prank-footer">ابدي وجعقلي 🥺</p>
+        </div>
+    </div>
+
+    <div class="screen light-overlay" id="screen-success">
+        <div class="success-card">
+            <div class="success-header">
+                <div style="font-size: 40px; margin-bottom: 10px;">💖✨</div>
+                <h2>كنت مستني اللحظة دي</h2>
+                <p>ودي بصراحة أحلى إجابة سمعتها النهاردة</p>
+            </div>
+            <div class="success-body">
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <span>📍</span>
+                        <span>كنت مستنيكي فعلاً يا خلود</span>
+                    </div>
+                    <div class="detail-value">🌝💜</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <span>🎵</span>
+                        <span>الأغاني</span>
+                    </div>
+                    <div class="detail-value">هادي ورومانسي</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <span>🌙</span>
+                        <span>البدو</span>
+                    </div>
+                    <div class="detail-value">مننا.. مش بنحسبه</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <span>⏰</span>
+                        <span>الوقت</span>
+                    </div>
+                    <div class="detail-value">متسأليش 😂</div>
+                </div>
+
+                <div class="countdown-title">⏳ متبقي وصول الـ date</div>
+                <div class="countdown">
+                    <div class="countdown-box">
+                        <span class="num" id="cd-days">02</span>
+                        <span class="label">يوم</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="num" id="cd-hours">00</span>
+                        <span class="label">ساعة</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="num" id="cd-minutes">00</span>
+                        <span class="label">دقيقة</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-box">
+                        <span class="num" id="cd-seconds">00</span>
+                        <span class="label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti" id="confetti"></div>
+
+    <script>
+        let isPlaying = false;
+        const musicIcon = document.getElementById('music-icon');
+        const musicStatus = document.getElementById('music-status');
+        const youtubeIframe = document.getElementById('youtube-iframe');
+
+        function toggleMusic() {
+            if (isPlaying) {
+                youtubeIframe.src = 'https://www.youtube.com/embed/RejKByB-sk8?autoplay=0&loop=1&playlist=RejKByB-sk8&enablejsapi=1';
+                musicIcon.style.animation = 'none';
+                musicStatus.textContent = '▶️ شغلي';
+                isPlaying = false;
+            } else {
+                youtubeIframe.src = 'https://www.youtube.com/embed/RejKByB-sk8?autoplay=1&loop=1&playlist=RejKByB-sk8&enablejsapi=1';
+                musicIcon.style.animation = 'musicPulse 1s ease-in-out infinite';
+                musicStatus.textContent = '⏸️ وقفي';
+                isPlaying = true;
+            }
+        }
+
+        let musicStarted = false;
+        document.addEventListener('click', function startMusicOnClick() {
+            if (!musicStarted) {
+                youtubeIframe.src = 'https://www.youtube.com/embed/RejKByB-sk8?autoplay=1&loop=1&playlist=RejKByB-sk8&enablejsapi=1';
+                musicIcon.style.animation = 'musicPulse 1s ease-in-out infinite';
+                musicStatus.textContent = '⏸️ وقفي';
+                isPlaying = true;
+                musicStarted = true;
+            }
+        }, { once: true });
+
+        const particlesContainer = document.getElementById('particles');
+        const emojis = ['🌸', '✨', '🌷', '💫', '🌺', '💖'];
+        for (let i = 0; i < 15; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 6 + 's';
+            p.style.animationDuration = (4 + Math.random() * 4) + 's';
+            particlesContainer.appendChild(p);
+        }
+
+        let noCount = 0;
+        const prankScreens = ['screen-prank1', 'screen-prank2', 'screen-prank3', 'screen-prank4'];
+        let isPranking = false;
+
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            const screen = document.getElementById(id);
+            if (screen) {
+                screen.classList.add('active');
+            }
+        }
+
+        function moveNoButton() {
+            if (isPranking) return;
+            
+            const btn = document.getElementById('btn-no');
+            const container = document.getElementById('btn-container');
+            const rect = container.getBoundingClientRect();
+            
+            const maxX = rect.width - btn.offsetWidth - 10;
+            const maxY = rect.height - btn.offsetHeight;
+            
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            
+            btn.style.left = newX + 'px';
+            btn.style.top = newY + 'px';
+        }
+
+        function handleNo() {
+            if (isPranking) return;
+            isPranking = true;
+            
+            const prankId = prankScreens[noCount % prankScreens.length];
+            showScreen(prankId);
+            noCount++;
+            
+            setTimeout(() => {
+                showScreen('screen-main');
+                isPranking = false;
+                const btn = document.getElementById('btn-no');
+                btn.style.left = '20px';
+                btn.style.top = '0px';
+            }, 3000);
+        }
+
+        function handleYes() {
+            showScreen('screen-success');
+            startConfetti();
+            startCountdown();
+        }
+
+        function startConfetti() {
+            const container = document.getElementById('confetti');
+            const shapes = ['🌸', '💖', '✨', '🌷', '🎉', '💐', '🎊', '💕', '🌹', '⭐'];
+            
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece';
+                    piece.style.left = Math.random() * 100 + '%';
+                    piece.style.top = '-30px';
+                    piece.style.fontSize = (14 + Math.random() * 20) + 'px';
+                    piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                    piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+                    container.appendChild(piece);
+                    
+                    setTimeout(() => piece.remove(), 6000);
+                }, i * 60);
+            }
+            
+            setTimeout(() => {
+                for (let i = 0; i < 40; i++) {
+                    setTimeout(() => {
+                        const piece = document.createElement('div');
+                        piece.className = 'confetti-piece';
+                        piece.style.left = Math.random() * 100 + '%';
+                        piece.style.top = '-30px';
+                        piece.style.fontSize = (14 + Math.random() * 20) + 'px';
+                        piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                        piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+                        container.appendChild(piece);
+                        setTimeout(() => piece.remove(), 6000);
+                    }, i * 80);
+                }
+            }, 2000);
+        }
+
+        function startCountdown() {
+            const target = new Date();
+            target.setDate(target.getDate() + 2);
+            
+            function update() {
+                const now = new Date();
+                const diff = target - now;
+                
+                if (diff <= 0) {
+                    document.getElementById('cd-days').textContent = '00';
+                    document.getElementById('cd-hours').textContent = '00';
+                    document.getElementById('cd-minutes').textContent = '00';
+                    document.getElementById('cd-seconds').textContent = '00';
+                    return;
+                }
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+            }
+            
+            update();
+            setInterval(update, 1000);
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            const btn = document.getElementById('btn-no');
+            if (!btn || isPranking) return;
+            
+            const rect = btn.getBoundingClientRect();
+            const dist = Math.sqrt(
+                Math.pow(e.clientX - (rect.left + rect.width/2), 2) + 
+                Math.pow(e.clientY - (rect.top + rect.height/2), 2)
+            );
+            
+            if (dist < 80) {
+                moveNoButton();
+            }
+        });
+    </script>
+</body>
+  </html>
