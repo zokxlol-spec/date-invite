@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة الفنانة 🎭🔥</title>
+    <title>دعوة أميرة 👑✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #f7971e 100%);
+            background: linear-gradient(135deg, #f5af19 0%, #f12711 50%, #fd1d1d 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,230 +23,255 @@
             position: relative;
         }
 
-        .spotlight {
+        .crown-float {
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: spotlightMove 8s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes spotlightMove {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); left: 20%; top: 30%; }
-            25% { transform: translate(-50%, -50%) scale(1.5); left: 80%; top: 70%; }
-            50% { transform: translate(-50%, -50%) scale(1); left: 50%; top: 50%; }
-            75% { transform: translate(-50%, -50%) scale(1.3); left: 30%; top: 80%; }
-        }
-
-        .stage-light {
-            position: absolute;
-            font-size: 40px;
+            font-size: 25px;
             opacity: 0.2;
-            animation: stageFloat 6s ease-in-out infinite;
+            animation: crownFloat 7s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
             filter: drop-shadow(0 0 10px gold);
         }
 
-        @keyframes stageFloat {
+        @keyframes crownFloat {
             0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.2; }
-            50% { transform: translateY(-60px) rotate(180deg) scale(1.4); opacity: 0.5; }
+            33% { transform: translateY(-30px) rotate(120deg) scale(1.3); opacity: 0.4; }
+            66% { transform: translateY(-15px) rotate(240deg) scale(0.9); opacity: 0.1; }
         }
 
-        .curtain {
+        .magic-sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: 0 0 8px gold, 0 0 15px orange;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .scroll-reveal {
             position: fixed;
             top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, #8B0000, #DC143C, #8B0000);
-            z-index: 1000;
-            transition: transform 1.5s ease-out;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-        }
-
-        .curtain.left {
             left: 0;
-            transform: translateX(0);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        .curtain.right {
-            right: 0;
-            transform: translateX(0);
+        .scroll-reveal.hidden {
+            transform: translateY(-100%);
         }
 
-        .curtain.open.left {
-            transform: translateX(-100%);
+        .scroll-emoji {
+            font-size: 70px;
+            animation: scrollBounce 1s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px gold);
         }
 
-        .curtain.open.right {
-            transform: translateX(100%);
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.1); }
         }
 
-        .curtain-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .scroll-text {
             color: gold;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
+            margin-top: 15px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            white-space: nowrap;
+        }
+
+        .scroll-btn {
+            background: gold;
+            color: #8B0000;
+            border: none;
+            border-radius: 40px;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 900;
+            font-family: 'Tajawal', sans-serif;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            animation: btnPulse 1.5s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(30px);
-            border-radius: 40px;
-            padding: 50px 40px;
-            width: 420px;
-            max-width: 94vw;
+            background: linear-gradient(135deg, rgba(255, 248, 220, 0.95), rgba(255, 235, 205, 0.95));
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 20px 18px;
+            width: 340px;
+            max-width: 92vw;
             text-align: center;
             box-shadow: 
-                0 30px 100px rgba(17, 153, 142, 0.3),
-                0 0 0 2px rgba(255, 215, 0, 0.3),
-                inset 0 0 50px rgba(255, 255, 255, 0.6);
+                0 15px 50px rgba(245, 175, 25, 0.3),
+                0 0 0 2px solid rgba(255, 215, 0, 0.4),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
             position: relative;
             z-index: 10;
-            animation: cardAppear 1.2s ease-out;
-            border: 3px solid rgba(255, 215, 0, 0.4);
+            animation: cardAppear 1s ease-out;
+            border: 2px solid gold;
         }
 
         @keyframes cardAppear {
-            from { opacity: 0; transform: scale(0.6) translateY(60px) rotate(-10deg); }
-            to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+            from { opacity: 0; transform: scale(0.7) translateY(40px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .spotlight-on-card {
+        .crown-top {
             position: absolute;
-            top: -50px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: spotlightPulse 2s ease-in-out infinite;
+            font-size: 40px;
+            animation: crownGlow 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px gold);
+            z-index: 20;
         }
 
-        @keyframes spotlightPulse {
-            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
-            50% { transform: translateX(-50%) scale(1.3); opacity: 0.3; }
+        @keyframes crownGlow {
+            0%, 100% { transform: translateX(-50%) scale(1) rotate(-5deg); filter: drop-shadow(0 0 15px gold); }
+            50% { transform: translateX(-50%) scale(1.15) rotate(5deg); filter: drop-shadow(0 0 25px orange); }
         }
 
         .badge {
             display: inline-block;
-            background: linear-gradient(135deg, #11998e, #f7971e);
-            border: 2px solid gold;
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-size: 14px;
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            border: 1px solid gold;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 11px;
             color: white;
             font-weight: 900;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 25px rgba(17, 153, 142, 0.4);
-            animation: badgeGlow 2s ease-in-out infinite;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(245, 175, 25, 0.4);
+            animation: royalGlow 2s ease-in-out infinite;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
 
-        @keyframes badgeGlow {
-            0%, 100% { box-shadow: 0 6px 25px rgba(17, 153, 142, 0.4); transform: scale(1); }
-            50% { box-shadow: 0 6px 35px rgba(247, 151, 30, 0.6); transform: scale(1.05); }
+        @keyframes royalGlow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(245, 175, 25, 0.4); transform: scale(1); }
+            50% { box-shadow: 0 4px 25px rgba(241, 39, 17, 0.6); transform: scale(1.03); }
         }
 
-        .star-emoji {
-            font-size: 70px;
-            margin-bottom: 15px;
-            animation: starDance 1.8s ease-in-out infinite;
+        .princess-emoji {
+            font-size: 50px;
+            margin-bottom: 8px;
+            animation: princessDance 2s ease-in-out infinite;
             display: inline-block;
-            filter: drop-shadow(0 0 20px gold);
+            filter: drop-shadow(0 0 15px gold);
         }
 
-        @keyframes starDance {
-            0%, 100% { transform: translateY(0) rotate(-15deg) scale(1); }
-            25% { transform: translateY(-15px) rotate(15deg) scale(1.2); }
-            50% { transform: translateY(0) rotate(-5deg) scale(1); }
-            75% { transform: translateY(-8px) rotate(10deg) scale(1.15); }
+        @keyframes princessDance {
+            0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
+            25% { transform: translateY(-8px) rotate(5deg) scale(1.1); }
+            50% { transform: translateY(0) rotate(-3deg) scale(1); }
+            75% { transform: translateY(-5px) rotate(3deg) scale(1.05); }
         }
 
         .title {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 900;
             color: #2d2d2d;
-            margin-bottom: 12px;
-            line-height: 1.6;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
         .title .highlight {
-            background: linear-gradient(135deg, #11998e, #f7971e);
+            background: linear-gradient(135deg, #f5af19, #f12711);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 32px;
+            font-size: 22px;
             display: block;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
-        .dialogue-box {
-            background: linear-gradient(135deg, rgba(17, 153, 142, 0.08), rgba(247, 151, 30, 0.08));
-            border: 2px dashed rgba(17, 153, 142, 0.3);
-            border-radius: 20px;
-            padding: 18px;
-            margin-bottom: 25px;
+        .royal-decree {
+            background: linear-gradient(135deg, rgba(245, 175, 25, 0.08), rgba(241, 39, 17, 0.08));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 12px;
+            margin-bottom: 15px;
             position: relative;
         }
 
-        .dialogue-box::before {
-            content: "🎭";
+        .royal-decree::before {
+            content: "📜";
             position: absolute;
-            top: -15px;
-            right: 20px;
-            font-size: 24px;
-            background: white;
-            padding: 0 8px;
+            top: -12px;
+            right: 15px;
+            font-size: 20px;
+            background: linear-gradient(135deg, #FFF8DC, #FFEBCD);
+            padding: 0 6px;
+            border-radius: 50%;
         }
 
-        .dialogue-text {
-            font-size: 15px;
+        .decree-text {
+            font-size: 12px;
             color: #444;
             line-height: 1.8;
             font-weight: 700;
         }
 
-        .dialogue-text .actor {
-            color: #11998e;
+        .decree-text .king {
+            color: #f12711;
             font-weight: 900;
+            font-size: 13px;
         }
 
-        .dialogue-text .actress {
-            color: #f7971e;
+        .decree-text .princess {
+            color: #f5af19;
             font-weight: 900;
+            font-size: 13px;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 15px;
             position: relative;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(17, 153, 142, 0.06), rgba(247, 151, 30, 0.06));
-            border-radius: 25px;
-            padding: 15px;
-            border: 2px dashed rgba(255, 215, 0, 0.3);
+            height: 55px;
+            background: linear-gradient(135deg, rgba(245, 175, 25, 0.06), rgba(241, 39, 17, 0.06));
+            border-radius: 18px;
+            padding: 10px;
+            border: 1px dashed rgba(255, 215, 0, 0.3);
         }
 
         .btn {
             border: none;
-            border-radius: 25px;
-            padding: 18px 35px;
-            font-size: 18px;
+            border-radius: 18px;
+            padding: 12px 24px;
+            font-size: 14px;
             font-weight: 900;
             font-family: 'Tajawal', sans-serif;
             cursor: pointer;
@@ -255,143 +280,143 @@
         }
 
         .btn-yes {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
+            background: linear-gradient(135deg, #f5af19, #f12711);
             color: white;
-            box-shadow: 0 8px 30px rgba(17, 153, 142, 0.5);
-            min-width: 170px;
-            font-size: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 5px 20px rgba(245, 175, 25, 0.4);
+            min-width: 130px;
+            font-size: 16px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .btn-yes:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 45px rgba(17, 153, 142, 0.6);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: 0 10px 30px rgba(245, 175, 25, 0.5);
         }
 
         .btn-no {
-            background: linear-gradient(135deg, #e8e8e8, #d0d0d0);
+            background: linear-gradient(135deg, #e8e8e8, #d5d5d5);
             color: #888;
-            min-width: 100px;
+            min-width: 70px;
             position: absolute;
-            left: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            left: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             transition: all 0.2s ease-out;
-            font-size: 16px;
-            border: 2px solid rgba(0,0,0,0.05);
+            font-size: 13px;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .prank-card {
-            background: linear-gradient(135deg, rgba(20, 20, 40, 0.97), rgba(10, 10, 30, 0.95));
-            backdrop-filter: blur(30px);
-            border-radius: 30px;
-            padding: 45px 40px;
-            width: 400px;
-            max-width: 92vw;
+            background: linear-gradient(135deg, rgba(30, 10, 10, 0.97), rgba(20, 5, 5, 0.95));
+            backdrop-filter: blur(20px);
+            border-radius: 22px;
+            padding: 25px 20px;
+            width: 320px;
+            max-width: 90vw;
             text-align: center;
             box-shadow: 
-                0 35px 90px rgba(0, 0, 0, 0.7),
-                0 0 0 3px solid rgba(255, 215, 0, 0.3);
+                0 20px 60px rgba(0, 0, 0, 0.7),
+                0 0 0 2px solid rgba(255, 215, 0, 0.3);
             position: relative;
             z-index: 10;
-            animation: prankAppear 0.7s ease-out;
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            animation: prankAppear 0.6s ease-out;
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         @keyframes prankAppear {
-            from { opacity: 0; transform: scale(0.8) translateY(40px) rotate(8deg); }
-            to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .prank-icon {
-            font-size: 100px;
-            margin-bottom: 20px;
+            font-size: 70px;
+            margin-bottom: 12px;
             display: block;
-            animation: dramaShake 0.7s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+            animation: royalShake 0.7s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
         }
 
-        @keyframes dramaShake {
+        @keyframes royalShake {
             0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
-            15% { transform: translateX(-10px) rotate(-10deg) scale(1.1); }
-            30% { transform: translateX(10px) rotate(10deg) scale(0.95); }
-            45% { transform: translateX(-6px) rotate(-6deg) scale(1.05); }
-            60% { transform: translateX(6px) rotate(6deg) scale(0.98); }
+            15% { transform: translateX(-8px) rotate(-8deg) scale(1.1); }
+            30% { transform: translateX(8px) rotate(8deg) scale(0.95); }
+            45% { transform: translateX(-5px) rotate(-5deg) scale(1.05); }
+            60% { transform: translateX(5px) rotate(5deg) scale(0.98); }
             75% { transform: translateX(-3px) rotate(-3deg) scale(1.02); }
         }
 
         .prank-title {
-            font-size: 26px;
+            font-size: 18px;
             font-weight: 900;
             color: #ffd700;
-            margin-bottom: 15px;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .prank-text {
-            font-size: 18px;
-            color: rgba(255,255,255,0.95);
-            line-height: 2;
-            margin-bottom: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.8;
+            margin-bottom: 12px;
         }
 
         .prank-footer {
-            font-size: 15px;
+            font-size: 12px;
             color: rgba(255,215,0,0.6);
             font-style: italic;
             font-weight: 700;
         }
 
         .success-card {
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(30px);
-            border-radius: 40px;
-            width: 440px;
-            max-width: 96vw;
+            background: linear-gradient(135deg, rgba(255, 248, 220, 0.97), rgba(255, 235, 205, 0.97));
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            width: 340px;
+            max-width: 94vw;
             overflow: hidden;
             box-shadow: 
-                0 35px 90px rgba(17, 153, 142, 0.3),
-                0 0 0 3px solid rgba(255, 215, 0, 0.3);
+                0 20px 60px rgba(245, 175, 25, 0.3),
+                0 0 0 2px solid rgba(255, 215, 0, 0.4);
             position: relative;
             z-index: 10;
-            animation: successAppear 1.2s ease-out;
+            animation: successAppear 1s ease-out;
         }
 
         @keyframes successAppear {
-            from { opacity: 0; transform: scale(0.7) translateY(60px) rotate(-5deg); }
-            to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+            from { opacity: 0; transform: scale(0.75) translateY(40px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .success-header {
-            background: linear-gradient(135deg, #11998e, #f7971e);
-            padding: 40px 35px;
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            padding: 20px 15px;
             text-align: center;
             position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
-            padding-bottom: 70px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+            padding-bottom: 40px;
         }
 
         .success-header h2 {
             color: white;
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 900;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .success-header p {
             color: rgba(255,255,255,0.9);
-            font-size: 16px;
+            font-size: 12px;
         }
 
         .success-body {
-            padding: 35px 40px 40px;
+            padding: 15px 18px 20px;
         }
 
         .detail-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 0;
-            border-bottom: 2px dashed rgba(17, 153, 142, 0.15);
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(245, 175, 25, 0.2);
         }
 
         .detail-row:last-child {
@@ -401,36 +426,36 @@
         .detail-label {
             display: flex;
             align-items: center;
-            gap: 14px;
-            font-size: 17px;
+            gap: 8px;
+            font-size: 13px;
             color: #444;
             font-weight: 800;
         }
 
         .detail-value {
-            font-size: 16px;
-            color: #11998e;
+            font-size: 12px;
+            color: #f12711;
             font-weight: 900;
         }
 
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 14px;
-            margin-top: 35px;
+            gap: 8px;
+            margin-top: 15px;
         }
 
         .countdown-box {
-            background: linear-gradient(135deg, #11998e, #f7971e);
-            border-radius: 20px;
-            padding: 20px 16px;
-            min-width: 85px;
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            border-radius: 12px;
+            padding: 10px 8px;
+            min-width: 55px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.35);
+            box-shadow: 0 4px 15px rgba(245, 175, 25, 0.3);
         }
 
         .countdown-box .num {
-            font-size: 34px;
+            font-size: 22px;
             font-weight: 900;
             color: white;
             display: block;
@@ -438,25 +463,25 @@
         }
 
         .countdown-box .label {
-            font-size: 13px;
+            font-size: 9px;
             color: rgba(255,255,255,0.9);
-            margin-top: 8px;
+            margin-top: 4px;
             display: block;
             font-weight: 800;
         }
 
         .countdown-sep {
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 900;
-            color: #f7971e;
+            color: #f5af19;
             align-self: center;
         }
 
         .countdown-title {
             text-align: center;
-            font-size: 16px;
+            font-size: 11px;
             color: #777;
-            margin-top: 20px;
+            margin-top: 10px;
             font-weight: 800;
         }
 
@@ -473,7 +498,7 @@
 
         .confetti-piece {
             position: absolute;
-            font-size: 24px;
+            font-size: 18px;
             animation: confettiFall linear forwards;
         }
 
@@ -492,82 +517,83 @@
             justify-content: center;
             align-items: center;
             z-index: 5;
+            padding: 10px;
         }
         .screen.active {
             display: flex;
         }
 
         .dark-overlay {
-            background: linear-gradient(135deg, #0a0a1a, #1a1a3e);
+            background: linear-gradient(135deg, #1a0505, #0f0202);
         }
 
         .light-overlay {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 50%, #f7971e 100%);
+            background: linear-gradient(135deg, #f5af19 0%, #f12711 50%, #fd1d1d 100%);
         }
 
         .dots {
             display: flex;
-            gap: 10px;
+            gap: 6px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 12px;
         }
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: #ddd;
             transition: all 0.3s ease;
         }
         .dot.active {
-            background: linear-gradient(135deg, #11998e, #f7971e);
-            width: 28px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            width: 20px;
+            border-radius: 4px;
         }
 
-        .director-note {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #999;
+        .royal-note {
+            margin-top: 12px;
+            font-size: 10px;
+            color: #888;
             font-style: italic;
-            border-top: 1px dashed #ddd;
-            padding-top: 10px;
+            border-top: 1px dashed rgba(255, 215, 0, 0.3);
+            padding-top: 8px;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
 
-    <!-- Curtain Effect -->
-    <div class="curtain left" id="curtain-left">
-        <div class="curtain-text">🎭 مسرحية</div>
-    </div>
-    <div class="curtain right" id="curtain-right">
-        <div class="curtain-text">الفنانة 🌟</div>
+    <!-- Scroll Reveal -->
+    <div class="scroll-reveal" id="scroll-reveal">
+        <div class="scroll-emoji">📜👑</div>
+        <div class="scroll-text">مرسوم ملكي من القصر</div>
+        <button class="scroll-btn" onclick="openDecree()">افتح المرسوم 📜</button>
     </div>
 
-    <div class="spotlight"></div>
-    <div id="stage-lights"></div>
+    <div id="crown-lights"></div>
+    <div id="sparkles"></div>
 
     <!-- MAIN SCREEN -->
-    <div class="screen active light-overlay" id="screen-main">
+    <div class="screen" id="screen-main">
         <div class="card">
-            <div class="spotlight-on-card"></div>
-            <div class="badge">🎬 دعوة مسرحية 🎬</div>
-            <div class="star-emoji">🎭✨</div>
+            <div class="crown-top">👑</div>
+            <div class="badge">👑 مرسوم ملكي 👑</div>
+            <div class="princess-emoji">👸✨</div>
             <h1 class="title">
-                يا الفنانة<br>
+                يا أميرة<br>
                 <span class="highlight">نروح ناكل بيتزا ونلعب بلايستيشن؟</span> 🎮
             </h1>
-            
-            <div class="dialogue-box">
-                <div class="dialogue-text">
-                    <span class="actor">🎤 البطل:</span> "يا ميرنا بقالي فترة بفكر في الموضوع ده"<br>
-                    <span class="actress">🌟 الفنانة:</span> "وطبعا مش لاقي حد غيري   "<br>
-                    <span style="color:#11998e; font-weight:900; font-size:13px;">(ده معنى إنك مميزة 😎)</span>
+
+            <div class="royal-decree">
+                <div class="decree-text">
+                    <span class="king">👑 الملك:</span> "بأمر ملكي.. أدعوكِ لقضاء وقت ممتع"<br>
+                    <span class="princess">👸 الأميرة:</span> "ومش لاقي حد غيركِ يستحق الشرف"<br>
+                    <span style="color:#f5af19; font-weight:900; font-size:11px;">(ده معنى إنكِ مميزة يا صاحبة السمو 😎)</span>
                 </div>
             </div>
 
             <div class="buttons" id="btn-container">
-                <button class="btn btn-yes" onclick="handleYes()">🍕 يلا بينا!</button>
+                <button class="btn btn-yes" onclick="handleYes()">🍕 أوامرك يا سمو!</button>
                 <button class="btn btn-no" id="btn-no" onmouseenter="moveNoButton()" onclick="handleNo()">🙄 لا</button>
             </div>
             <div class="dots">
@@ -577,8 +603,8 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
-            <div class="director-note">
-                🎬 ملاحظة المخرج: زر "لا" مش موجود في السيناريو أصلاً 😂
+            <div class="royal-note">
+                📜 ملاحظة القصر: زر "لا" مش موجود في الدستور الملكي 😂
             </div>
         </div>
     </div>
@@ -587,13 +613,13 @@
     <div class="screen dark-overlay" id="screen-prank1">
         <div class="prank-card">
             <span class="prank-icon">😱</span>
-            <h3 class="prank-title">كارثة! الفنانة قالت لا!</h3>
+            <h3 class="prank-title"> فضيحة ملكية! الأميرة رفضت زياد!</h3>
             <p class="prank-text">
-                🎬 المشهد ده مش في السيناريو!<br>
-                لازم نعمل لجنة تحكيم فوراً<br>
-                🕵️‍♂️ واللي هتحكم صحبتك هدير🤷   ؟
+                👑 الكلام ده مش في البروتوكول!<br>
+                لازم نعمل تحقيق قصر فوراً<br>
+                🕵️‍♂️ هل الأميرة فقدت عقلها؟
             </p>
-            <p class="prank-footer">🎭 إعادة التصوير من الأول يا فندم</p>
+            <p class="prank-footer">📜 إعادة صياغة المرسوم يا فندم</p>
         </div>
     </div>
 
@@ -601,13 +627,13 @@
     <div class="screen dark-overlay" id="screen-prank2">
         <div class="prank-card">
             <span class="prank-icon">🤡</span>
-            <h3 class="prank-title">ميرنا.. إنتي بتتمثلي صح 🙂؟</h3>
+            <h3 class="prank-title">أميره.. إنتي بتقوليلي لا ي جزمه ؟</h3>
             <p class="prank-text">
-                🤡 أنا شكلي دلوقتي clown<br>
-                واقف على المسرح مستني ردك<br>
-                💀 والجمهور بيضحك عليا
+                🤡 أنا شكلي دلوقتي كلاون<br>
+                واقف في القصر مستني ردك<br>
+                💀 والحرس بيضحك عليا
             </p>
-            <p class="prank-footer">😤 راجعي نفسك يا نجمة</p>
+            <p class="prank-footer">😤  راجعي نفسك يا صاحبة السمو الاميره</p>
         </div>
     </div>
 
@@ -615,13 +641,13 @@
     <div class="screen dark-overlay" id="screen-prank3">
         <div class="prank-card">
             <span class="prank-icon">🥺</span>
-            <h3 class="prank-title">الستارة بتتقفل..</h3>
+            <h3 class="prank-title">القصر بيتقفل..</h3>
             <p class="prank-text">
-                🎭 المسرحية خلصت<br>
-                🍕 هاكل البيتزا لوحدي في الكواليس<br>
-                😭 والمخرج بيعيط
+                🏰 الملك هيسافر لوحده<br>
+                🍕 هاكل البيتزا في القصر لوحدي<br>
+                😭 والخدم بيبكوا
             </p>
-            <p class="prank-footer">💔 النهاية الحزينة</p>
+            <p class="prank-footer">💔 النهاية الحزينة للحكاية</p>
         </div>
     </div>
 
@@ -629,13 +655,13 @@
     <div class="screen dark-overlay" id="screen-prank4">
         <div class="prank-card">
             <span class="prank-icon">👻</span>
-            <h3 class="prank-title">الفنانة اختفت من المسرح!</h3>
+            <h3 class="prank-title">الأميرة اختفت من القصر!</h3>
             <p class="prank-text">
                 👻 آخر مرة شفتها كانت بتقول "لا"<br>
-                🚨 واختفت من الكواليس<br>
-                🔍 لو حد شافها يبلغ الإنتاج
+                🚨 واختفت من القصر بالكامل<br>
+                🔍 لو حد شافها يبلغ الحرس الملكي
             </p>
-            <p class="prank-footer">😂 يا ميرنا أنا بتهزأ بجد دلوقتي</p>
+            <p class="prank-footer">😂 أنا بتهزأ بجد دلوقتي</p>
         </div>
     </div>
 
@@ -643,41 +669,41 @@
     <div class="screen light-overlay" id="screen-success">
         <div class="success-card">
             <div class="success-header">
-                <div style="font-size: 60px; margin-bottom: 15px; animation: starDance 1s infinite;">🎉🍕🎮</div>
-                <h2>الفنانة ميرنا وافقت! 🎊</h2>
-                <p>الحمدلله.. المسرحية هتكمل</p>
+                <div style="font-size: 45px; margin-bottom: 10px; animation: princessDance 1s infinite;">🎉🍕🎮</div>
+                <h2>الأميرة وافقت! 👑🎊</h2>
+                <p>الحمدلله.. القصر هيفضل مفتوح</p>
             </div>
             <div class="success-body">
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>📍</span>
-                        <span>مكان التصوير</span>
+                        <span>قصر البيتزا</span>
                     </div>
-                    <div class="detail-value">أي حتة ميرنا تختاره  🍕</div>
+                    <div class="detail-value">أي حتة فيها بيتزا 🍕</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>🎮</span>
-                        <span>المشهد</span>
+                        <span>النشاط الملكي</span>
                     </div>
                     <div class="detail-value">بلايستيشن + بيتزا</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>💰</span>
-                        <span>الميزانية</span>
+                        <span>الخزينة الملكية</span>
                     </div>
-                    <div class="detail-value">على صاحب الدعوة 😎</div>
+                    <div class="detail-value">على زياد 💜 😎</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">
                         <span>⏰</span>
-                        <span>وقت التصوير</span>
+                        <span>وقت الملوك</span>
                     </div>
-                    <div class="detail-value">لما الفنانة تكون فاضية 😂</div>
+                    <div class="detail-value">لما الأميرة تكون فاضية 😂</div>
                 </div>
 
-                <div class="countdown-title">⏳ متبقي على عرض المسرحية</div>
+                <div class="countdown-title">⏳ متبقي على العيد الملكي</div>
                 <div class="countdown">
                     <div class="countdown-box">
                         <span class="num" id="cd-days">01</span>
@@ -699,9 +725,9 @@
                         <span class="label">ثانية</span>
                     </div>
                 </div>
-                
-                <p style="text-align:center; margin-top:25px; color:#11998e; font-weight:900; font-size:18px;">
-                    🍕🎮 مستني اللحظة دي من زمان! 🎭
+
+                <p style="text-align:center; margin-top:15px; color:#f12711; font-weight:900; font-size:14px;">
+                    🍕🎮 مستني اللحظة دي من زمان! 👑
                 </p>
             </div>
         </div>
@@ -710,25 +736,39 @@
     <div class="confetti" id="confetti"></div>
 
     <script>
-        // ===== CURTAIN OPEN =====
-        setTimeout(() => {
-            document.getElementById('curtain-left').classList.add('open');
-            document.getElementById('curtain-right').classList.add('open');
-        }, 1500);
+        // ===== OPEN DECREE =====
+        function openDecree() {
+            document.getElementById('scroll-reveal').classList.add('hidden');
+            setTimeout(() => {
+                document.getElementById('screen-main').classList.add('active');
+            }, 500);
+        }
 
-        // ===== STAGE LIGHTS =====
-        const lightsContainer = document.getElementById('stage-lights');
-        const lightEmojis = ['✨', '🌟', '💫', '⭐', '🎭', '🎬', '🎤', '🎪'];
-        for (let i = 0; i < 25; i++) {
+        // ===== CROWN LIGHTS =====
+        const lightsContainer = document.getElementById('crown-lights');
+        const crownEmojis = ['👑', '✨', '💎', '🏰', '⚜️', '🌟', '💫', '🔱'];
+        for (let i = 0; i < 20; i++) {
             const l = document.createElement('div');
-            l.className = 'stage-light';
-            l.textContent = lightEmojis[Math.floor(Math.random() * lightEmojis.length)];
+            l.className = 'crown-float';
+            l.textContent = crownEmojis[Math.floor(Math.random() * crownEmojis.length)];
             l.style.left = Math.random() * 100 + '%';
             l.style.top = Math.random() * 100 + '%';
-            l.style.animationDelay = Math.random() * 6 + 's';
-            l.style.animationDuration = (4 + Math.random() * 6) + 's';
-            l.style.fontSize = (20 + Math.random() * 35) + 'px';
+            l.style.animationDelay = Math.random() * 7 + 's';
+            l.style.animationDuration = (5 + Math.random() * 7) + 's';
+            l.style.fontSize = (18 + Math.random() * 30) + 'px';
             lightsContainer.appendChild(l);
+        }
+
+        // ===== SPARKLES =====
+        const sparklesContainer = document.getElementById('sparkles');
+        for (let i = 0; i < 30; i++) {
+            const s = document.createElement('div');
+            s.className = 'magic-sparkle';
+            s.style.left = Math.random() * 100 + '%';
+            s.style.top = Math.random() * 100 + '%';
+            s.style.animationDelay = Math.random() * 3 + 's';
+            s.style.animationDuration = (2 + Math.random() * 3) + 's';
+            sparklesContainer.appendChild(s);
         }
 
         // ===== SCREENS LOGIC =====
@@ -747,17 +787,17 @@
         // ===== NO BUTTON =====
         function moveNoButton() {
             if (isPranking) return;
-            
+
             const btn = document.getElementById('btn-no');
             const container = document.getElementById('btn-container');
             const rect = container.getBoundingClientRect();
-            
-            const maxX = rect.width - btn.offsetWidth - 20;
+
+            const maxX = rect.width - btn.offsetWidth - 15;
             const maxY = rect.height - btn.offsetHeight;
-            
+
             const newX = Math.random() * maxX;
             const newY = Math.random() * maxY;
-            
+
             btn.style.left = newX + 'px';
             btn.style.top = newY + 'px';
             btn.style.transform = `rotate(${Math.random() * 30 - 15}deg) scale(${0.85 + Math.random() * 0.3})`;
@@ -766,16 +806,16 @@
         function handleNo() {
             if (isPranking) return;
             isPranking = true;
-            
+
             const prankId = prankScreens[noCount % prankScreens.length];
             showScreen(prankId);
             noCount++;
-            
+
             setTimeout(() => {
                 showScreen('screen-main');
                 isPranking = false;
                 const btn = document.getElementById('btn-no');
-                btn.style.left = '25px';
+                btn.style.left = '15px';
                 btn.style.top = '0px';
                 btn.style.transform = 'rotate(0deg) scale(1)';
             }, 6000);
@@ -790,18 +830,18 @@
         // ===== CONFETTI =====
         function startConfetti() {
             const container = document.getElementById('confetti');
-            const shapes = ['🍕', '🎮', '🎉', '🔥', '💖', '✨', '🎭', '🥳', '🤪', '💀', '🌟', '🎬'];
-            
-            for (let i = 0; i < 80; i++) {
+            const shapes = ['🍕', '🎮', '🎉', '🔥', '💖', '✨', '👑', '🥳', '🤪', '💀', '💎', '🏰', '⚜️', '🔱'];
+
+            for (let i = 0; i < 60; i++) {
                 const piece = document.createElement('div');
                 piece.className = 'confetti-piece';
                 piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
                 piece.style.left = Math.random() * 100 + '%';
-                piece.style.fontSize = (20 + Math.random() * 30) + 'px';
-                piece.style.animationDuration = (3 + Math.random() * 5) + 's';
+                piece.style.fontSize = (16 + Math.random() * 25) + 'px';
+                piece.style.animationDuration = (2.5 + Math.random() * 5) + 's';
                 piece.style.animationDelay = Math.random() * 3 + 's';
                 container.appendChild(piece);
-                
+
                 setTimeout(() => {
                     piece.remove();
                 }, 8000);
@@ -813,11 +853,11 @@
             const targetDate = new Date();
             targetDate.setDate(targetDate.getDate() + 1);
             targetDate.setHours(20, 0, 0, 0);
-            
+
             function updateCountdown() {
                 const now = new Date();
                 const diff = targetDate - now;
-                
+
                 if (diff <= 0) {
                     document.getElementById('cd-days').textContent = '00';
                     document.getElementById('cd-hours').textContent = '00';
@@ -825,18 +865,18 @@
                     document.getElementById('cd-seconds').textContent = '00';
                     return;
                 }
-                
+
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
+
                 document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
                 document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
                 document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
             }
-            
+
             updateCountdown();
             setInterval(updateCountdown, 1000);
         }
