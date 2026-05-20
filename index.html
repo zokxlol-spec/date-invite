@@ -473,7 +473,7 @@
                 <span class="highlight">تيجي نشرب قهوة في date؟</span> ☕
             </h1>
             <p class="subtitle">
-                <span class="emoji">🥺</span> بقالي شوية بفكر أقولك...<br>
+                <span class="emoji">🥺</span> بقالي شوية بفكر أقولك...<<br>
                 بس مكنتش عارف أقولها إزاي
             </p>
             <div class="buttons" id="btn-container">
@@ -608,6 +608,7 @@
     <div class="confetti" id="confetti"></div>
 
     <script>
+        // ===== MUSIC =====
         let isPlaying = false;
         const musicIcon = document.getElementById('music-icon');
         const musicStatus = document.getElementById('music-status');
@@ -638,6 +639,7 @@
             }
         }, { once: true });
 
+        // ===== PARTICLES =====
         const particlesContainer = document.getElementById('particles');
         const emojis = ['🌸', '✨', '🌷', '💫', '🌺', '💖'];
         for (let i = 0; i < 15; i++) {
@@ -651,6 +653,7 @@
             particlesContainer.appendChild(p);
         }
 
+        // ===== SCREENS LOGIC =====
         let noCount = 0;
         const prankScreens = ['screen-prank1', 'screen-prank2', 'screen-prank3', 'screen-prank4'];
         let isPranking = false;
@@ -663,31 +666,33 @@
             }
         }
 
+        // ===== NO BUTTON (MOVES ON HOVER) =====
         function moveNoButton() {
             if (isPranking) return;
-
+            
             const btn = document.getElementById('btn-no');
             const container = document.getElementById('btn-container');
             const rect = container.getBoundingClientRect();
-
+            
             const maxX = rect.width - btn.offsetWidth - 10;
             const maxY = rect.height - btn.offsetHeight;
-
+            
             const newX = Math.random() * maxX;
             const newY = Math.random() * maxY;
-
+            
             btn.style.left = newX + 'px';
             btn.style.top = newY + 'px';
         }
 
+        // ===== HANDLE NO =====
         function handleNo() {
             if (isPranking) return;
             isPranking = true;
-
+            
             const prankId = prankScreens[noCount % prankScreens.length];
             showScreen(prankId);
             noCount++;
-
+            
             setTimeout(() => {
                 showScreen('screen-main');
                 isPranking = false;
@@ -697,56 +702,45 @@
             }, 8000);
         }
 
+        // ===== HANDLE YES =====
         function handleYes() {
             showScreen('screen-success');
             startConfetti();
             startCountdown();
         }
 
+        // ===== CONFETTI =====
         function startConfetti() {
             const container = document.getElementById('confetti');
-            const shapes = ['🌸', '💖', '✨', '🌷', '🎉', '💐', '🎊', '💕', '🌹', '⭐'];
-
-            for (let i = 0; i < 80; i++) {
+            const shapes = ['🌸', '💖', '✨', '🌷', '💫', '🌺', '🎉', '🎊', '💐', '🌹'];
+            
+            for (let i = 0; i < 50; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                piece.style.left = Math.random() * 100 + '%';
+                piece.style.fontSize = (14 + Math.random() * 20) + 'px';
+                piece.style.animationDuration = (2 + Math.random() * 4) + 's';
+                piece.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(piece);
+                
                 setTimeout(() => {
-                    const piece = document.createElement('div');
-                    piece.className = 'confetti-piece';
-                    piece.style.left = Math.random() * 100 + '%';
-                    piece.style.top = '-30px';
-                    piece.style.fontSize = (14 + Math.random() * 20) + 'px';
-                    piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
-                    piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
-                    container.appendChild(piece);
-
-                    setTimeout(() => piece.remove(), 6000);
-                }, i * 60);
+                    piece.remove();
+                }, 6000);
             }
-
-            setTimeout(() => {
-                for (let i = 0; i < 40; i++) {
-                    setTimeout(() => {
-                        const piece = document.createElement('div');
-                        piece.className = 'confetti-piece';
-                        piece.style.left = Math.random() * 100 + '%';
-                        piece.style.top = '-30px';
-                        piece.style.fontSize = (14 + Math.random() * 20) + 'px';
-                        piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
-                        piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
-                        container.appendChild(piece);
-                        setTimeout(() => piece.remove(), 6000);
-                    }, i * 80);
-                }
-            }, 2000);
         }
 
+        // ===== COUNTDOWN =====
         function startCountdown() {
-            const target = new Date();
-            target.setDate(target.getDate() + 2);
-
-            function update() {
+            // Set target date to 2 days from now
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 2);
+            targetDate.setHours(0, 0, 0, 0);
+            
+            function updateCountdown() {
                 const now = new Date();
-                const diff = target - now;
-
+                const diff = targetDate - now;
+                
                 if (diff <= 0) {
                     document.getElementById('cd-days').textContent = '00';
                     document.getElementById('cd-hours').textContent = '00';
@@ -754,36 +748,21 @@
                     document.getElementById('cd-seconds').textContent = '00';
                     return;
                 }
-
+                
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
+                
                 document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
                 document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
                 document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
             }
-
-            update();
-            setInterval(update, 1000);
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
-
-        document.addEventListener('mousemove', function(e) {
-            const btn = document.getElementById('btn-no');
-            if (!btn || isPranking) return;
-
-            const rect = btn.getBoundingClientRect();
-            const dist = Math.sqrt(
-                Math.pow(e.clientX - (rect.left + rect.width/2), 2) + 
-                Math.pow(e.clientY - (rect.top + rect.height/2), 2)
-            );
-
-            if (dist < 80) {
-                moveNoButton();
-            }
-        });
     </script>
 </body>
 </html>
